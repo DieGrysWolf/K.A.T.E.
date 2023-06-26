@@ -78,13 +78,12 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-            
+            }            
         }
 
         [HttpPost("add-access-point")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AddAccessPoint([FromBody] AccessPointRequestDTO accessPointDTO)
+        public async Task<IActionResult> AddAccessPoint([FromBody] AddAccessPointDTO accessPointDTO)
         {
             try
             {
